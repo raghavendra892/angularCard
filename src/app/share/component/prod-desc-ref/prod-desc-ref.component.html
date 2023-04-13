@@ -1,0 +1,14 @@
+<!-- ############## lecture 11 (3) ########### -->
+<div class="card mb-4">
+    <div class="card mb-4 text-white" *ngFor="let prod of  cardDescripT" [ngClass]="{
+        'bg-danger' : prod.pCatg === 'Catlog',
+        'bg-warning' : prod.pCatg === 'Product'
+    }">
+        <div class="card-header">
+            {{prod.pname}}
+        </div>
+        <div class="card-body">
+            {{prod.pDesc}}
+        </div>
+    </div>
+</div>

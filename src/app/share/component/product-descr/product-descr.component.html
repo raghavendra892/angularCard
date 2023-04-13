@@ -1,0 +1,14 @@
+<!-- ############## lecture 11 (2) ########### -->
+<div class="card mb-4">
+    <div class="card mb-4 text-white" *ngFor="let prod of  cardDescript" [ngClass]="{
+        'bg-primary' : prod.pCatg === 'Catlog',
+        'bg-success' : prod.pCatg === 'Product'
+    }">
+        <div class="card-header">
+            {{prod.pname}}
+        </div>
+        <div class="card-body">
+            {{prod.pDesc}}
+        </div>
+    </div>
+</div>

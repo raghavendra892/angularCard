@@ -1,0 +1,104 @@
+
+
+<!-- ############## lecture 11 (4)########### -->
+<h2 class="bg-primary text-white  text-center mb-4 p-2">By Using Propert Binding</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <app-produ-form-pbin (Addnewprod)="onAddnewprod($event)"></app-produ-form-pbin>
+        </div>
+        <div class="col-md-6">
+            <app-produ-dse-pbin [ProductInfo]="productsArraY"></app-produ-dse-pbin>
+        </div>
+    </div>
+</div>
+
+
+<!-- ############## lecture 11 (3)########### -->
+<h2 class="bg-dark  mb-4 text-center text-white p-2">By using ViewChild</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <app-prod-form-ref (onaddproduC)="onproductHanD($event)"></app-prod-form-ref>
+        </div>
+        <div class="col-md-6">
+            <app-prod-desc-ref [cardDescripT]="productArraY"></app-prod-desc-ref>
+        </div>
+    </div>
+</div>
+
+
+<!-- ############## lecture 11 (2)########### @@@@-->
+<h2 class="bg-primary mb-4 text-white p-2 text-center">BY TemPlate Referance</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <app-product-form (onaddproduC)="onproductHand($event)"></app-product-form>
+        </div>
+        <div class="col-md-6">
+            <app-product-descr [cardDescript]="productArray"></app-product-descr>
+        </div>
+    </div>
+</div>
+
+
+<!-- ############## lecture 11 (1)########### -->
+<h2 class="bg-info text-white mb-4 text-center p-2">Products</h2>
+<div class="container">
+    <div class="row">
+        <div class="col-md-6 mt-2">
+            <div class="form-group">
+                <label for="productname">Product Name</label>
+                <input type="text" #ProductName id="productname" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="productdecription">ProductDecription</label>
+                <input type="text" #ProductFDesc id="productdecription" class="form-control">
+            </div>
+            <div class="form-group">
+                <button class="btn btn-primary mr-4" (click)="addProductDetails(ProductName,ProductFDesc, 'Product')">Add as Product</button>
+                <button class="btn btn-primary" (click)="addProductDetails(ProductName,ProductFDesc,'Catlog')">Add as Catlog</button>
+            </div>
+        </div>
+        <div class="col-md-6 mt-4">
+            <div class="card mb-4 text-white" *ngFor="let prod of productArraynew" [ngClass]="{
+                'bg-dark' : prod.pCatg === 'Catlog',             
+                'bg-success' : prod.pCatg === 'Product'
+            }">
+                <div class="card-header">
+                    {{prod.pname}}
+                </div>
+                <div class="card-body">
+                    {{prod.pDesc}}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- lecture 10<div class="container mt-4">
+    <div class="row">
+        <div class="col-md-6">
+            <app-form (addnewstdu)="onstdadd($event)"></app-form>
+        </div>
+        <div class="col-md-6">
+            <app-table [stdinfo]="stdArray"></app-table>
+        </div>
+        
+    </div>
+</div> -->

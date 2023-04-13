@@ -1,0 +1,14 @@
+<!-- ############## lecture 11 (4) ########### -->
+
+<div class="form-group">
+    <label for="productname">Product Name</label>
+    <input type="text" [(ngModel)]="ProductNameval" id="productname" class="form-control">
+</div>
+<div class="form-group">
+    <label for="productdescription">Product Description</label>
+    <input type="text" [(ngModel)]="ProductDesval" id="productdescription" class="form-control">
+</div>
+<div class="form-group">
+    <button class="btn btn-info mr-4" (click)="onProductADD('Product')">product is added</button>
+    <button class="btn btn-info" (click)="onProductADD('Catlog')">Catlog is added</button>
+</div>
